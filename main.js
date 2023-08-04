@@ -81,16 +81,32 @@ reserveButton.addEventListener("click", () => {
 
 document.forms.reserveForm.onsubmit = function (e) {
     e.preventDefault();
-    let nameInp = document.forms.reserveForm.name.value;
-    let phoneInp = document.forms.reserveForm.phone.value;
-    let emailInp = document.forms.reserveForm.email.value;
-    let dateInp = document.forms.reserveForm.date.value;
+    let nameInp = document.forms.reserveForm.name;
+    let phoneInp = document.forms.reserveForm.phone;
+    let emailInp = document.forms.reserveForm.email;
+    let dateInp = document.forms.reserveForm.date;
 
     let xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "form.php");
+    xhr.open("POST", "form.js");
 
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-    xhr.send("name=" + nameInp + "&phone=" + phoneInp + "&email=" + emailInp + "&date=" + dateInp);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            popup.classList.remove("reserve__popup--active");
+            nameInp.value = "";
+            phoneInp.value = "";
+            emailInp.value = "";
+            dateInp.value = "";
+        } else {
+            popup.classList.remove("reserve__popup--active");
+            nameInp.value = "";
+            phoneInp.value = "";
+            emailInp.value = "";
+            dateInp.value = "";
+        }
+    };
+
+    xhr.send("name=" + nameInp.value + "&phone=" + phoneInp.value + "&email=" + emailInp.value + "&date=" + dateInp.value);
 };
