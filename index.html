@@ -7,19 +7,23 @@
         <link rel="stylesheet" href="./css/reset.css" />
 
         <link rel="stylesheet" href="./css/styles.css" />
+        <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
         <title>Document</title>
     </head>
     <body>
-        <div class="wrapper">
-            <header class="header">
+        <div class="wrapper" id="home">
+            <header class="header" >
                 <div class="header-nav container">
-                    <div class="header-logo">
+                    <a href="#home" class="header-logo">
                         <img class="header-logo__img" src="./img/logo.svg" alt="company logo" />
-                    </div>
+                    </a>
                     <nav class="header-menu">
                         <ul class="header-list">
-                            <li><a class="header-list__link" href="#"> À la carte</a></li>
-                            <li><a class="header-list__link" href="#">Wijnkaart</a></li>
+                            <li><a class="header-list__link" href="#schedule"> À la carte</a></li>
+                            <li><a class="header-list__link" href="#qoutes">Wijnkaart</a></li>
                             <li><a class="header-list__link" href="#">Lunchmenu</a></li>
                             <li><a class="header-list__link" href="#">Contact</a></li>
                         </ul>
@@ -49,22 +53,128 @@
                                 <p>Fb</p>
                             </div>
                             <div class="hero__content-cta-icon"> 
-                                <p>Fb</p>
+                                <p>lg</p>
                             </div>
                             <div class="hero__content-cta-icon">
-                                <p>Fb</p>
+                                <p>Tw</p>
                             </div>
                             <div class="hero__content-cta-icon">
-                                <p>Fb</p>
+                                <p>Yt</p>
                             </div>
                         </div>
                     </div>
                 </section>
+                <section class="schedule" id="schedule">
+                    <div class="schedule__content container">
+                       <div class="schedule__content-left">
+                            <div class="schedule__content-item">
+                                <p class="schedule__content-title">Woensdag 12/01</p>
+                                <div class="schedule__content-menu">
+                                    <p>Salade met Serrano</p>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <p>Steak Tartaar</p>
+                                </div>
+                            </div>
+                            <div class="schedule__content-item">
+                                <p class="schedule__content-title">Donderdag 13/01</p>
+                                <div class="schedule__content-menu">
+                                    <p>Toast Roquefort</p>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <p>Penne met Kip en Prei</p>
+                                </div>
+                            </div>
+                            <div class="schedule__content-item">
+                                <p class="schedule__content-title">Vrijdag 14/01
+                                </p>
+                                <div class="schedule__content-menu">
+                                    <p>Verrassing van de Chef</p>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <p>Penne met Kip en Prei</p>
+                                </div>
+                            </div>
+                            <div class="schedule__content-item">
+                                <p class="schedule__content-title">Vrijdag 15/01
+                                </p>
+                                <div class="schedule__content-menu">
+                                    <p>Verrassing van de Chef</p>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <p>Penne met Kip en Prei</p>
+                                </div>
+                            </div>
+                            <div class="schedule__content-item">
+                                <p class="schedule__content-title">Vrijdag 16/01
+                                </p>
+                                <div class="schedule__content-menu">
+                                    <p>Verrassing van de Chef</p>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <div class="schedule__content-item-decor"></div>
+                                    <p>Penne met Kip en Prei</p>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="schedule__content-right">
+                            <div class="schedule__content-right-decore">
+                            </div>
+                       </div>
                     </div>
+                </section>
+                <section class="quotes" id="qoutes">
+                    <div class="qoutes-content container">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <div class="quotes-content__slide">
+                                    <img class="quotes-content__swipe-icon" src="./img/icons/swipe-ico.svg" alt="тут можно просто свайпнуть">
+                                    <img class="quotes-content__slide-ico" src="./img/icons/quotesIco.svg" alt="qoute ico">
+                                    <h2>Goede service, lekker eten, toffe ambiance</h2>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo  dolores et ea rebum. Stet clita kasd gubergren.
+                                    </p>
+                                    <p>ALAIN HEYNDRICKX</p>
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="quotes-content__slide">
+                                    <img class="quotes-content__swipe-icon" src="./img/icons/swipe-ico.svg" alt="тут можно просто свайпнуть">
+                                    <img class="quotes-content__slide-ico" src="./img/icons/quotesIco.svg" alt="qoute ico">
+                                    <h2>Goede service, lekker eten, toffe ambiance</h2>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo  dolores et ea rebum. Stet clita kasd gubergren.
+                                    </p>
+                                    <p>ALAIN HEYNDRICKX</p>
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="quotes-content__slide">
+                                    <img class="quotes-content__swipe-icon" src="./img/icons/swipe-ico.svg" alt="тут можно просто свайпнуть">
+                                    <img class="quotes-content__slide-ico" src="./img/icons/quotesIco.svg" alt="qoute ico">
+                                    <h2>Goede service, lekker eten, toffe ambiance</h2>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo  dolores et ea rebum. Stet clita kasd gubergren.
+                                    </p>
+                                    <p>ALAIN HEYNDRICKX</p>
+                                </div>
+                              </div>
+                            </div>
+                            <svg  class="button-prev" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M43.8958 11.9L24.8791 30.9166C22.6333 33.1625 22.6333 36.8375 24.8791 39.0833L43.8958 58.1" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg class="button-next" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M26.1042 11.9L45.1209 30.9166C47.3667 33.1625 47.3667 36.8375 45.1209 39.0833L26.1042 58.1" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                          </div>
+                    </div>
+                </section>
             </main>
             <footer></footer>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script src="./main.js"></script>
     </body>
 </html>
