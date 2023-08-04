@@ -4,7 +4,7 @@ const burger = document.querySelector(".burger-menu");
 const burgerItems = document.querySelectorAll(".burger-menu__item");
 const burgerItemsHor = document.querySelectorAll(".burger-menu__item-horizont");
 const menuBody = document.querySelector(".header-menu");
-
+const menuLinks = document.querySelectorAll(".header-list__link");
 burger.addEventListener("click", () => {
     burgerItems.forEach((item) => {
         item.classList.toggle("burger-menu__item--active");
@@ -39,13 +39,20 @@ burger.addEventListener("click", () => {
 })();
 
 const anchors = document.querySelectorAll('a[href*="#"]');
+const offset = 150;
+
 for (let anchor of anchors) {
     anchor.addEventListener("click", (e) => {
         e.preventDefault();
         const blockID = anchor.getAttribute("href");
-        document.querySelector("" + blockID).scrollIntoView({
+        const targetElement = document.querySelector("" + blockID);
+        const targetPosition = targetElement.getBoundingClientRect().top;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - offset;
+
+        window.scrollBy({
+            top: distance,
             behavior: "smooth",
-            block: "start",
         });
     });
 }
@@ -80,6 +87,9 @@ reserveButton.addEventListener("click", () => {
     }, 300);
     document.querySelector(".reserve__popup-form-close").addEventListener("click", () => {
         popup.classList.remove("reserve__popup--active");
+        setTimeout(() => {
+            popup.style.display = "none";
+        }, 300);
     });
 });
 
@@ -132,3 +142,5 @@ retryErrorPopup.addEventListener("click", () => {
     errorPopup.classList.remove("popup-error--active");
     popup.classList.add("reserve__popup--active");
 });
+
+// AJAX

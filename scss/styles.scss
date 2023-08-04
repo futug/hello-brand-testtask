@@ -101,11 +101,41 @@ body {
         img {
             width: 24px;
             height: 24px;
+            transition: transform 0.2s ease-in-out;
         }
+
         a {
             color: var(--light-text-color);
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover img {
+            animation: shake 0.3s ease-in-out;
+        }
+
+        &:hover a {
+            filter: brightness(0.8);
         }
     }
+
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(-5px);
+        }
+        50% {
+            transform: translateX(5px);
+        }
+        75% {
+            transform: translateX(-5px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
     .burger-menu {
         display: none;
         flex-direction: column;
