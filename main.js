@@ -14,7 +14,10 @@ burger.addEventListener("click", () => {
         horItem.classList.toggle("burger-menu__item-horizont--active");
     });
 
-    menuBody.classList.toggle("header-menu--active");
+    menuBody.style.display = "block";
+    setTimeout(() => {
+        menuBody.classList.toggle("header-menu--active");
+    }, 300);
 });
 
 // BURGER__MENU
@@ -71,7 +74,10 @@ const reserveButton = document.querySelector(".hero__content-cta-button");
 const popup = document.querySelector(".reserve__popup");
 
 reserveButton.addEventListener("click", () => {
-    popup.classList.add("reserve__popup--active");
+    popup.style.display = "flex";
+    setTimeout(() => {
+        popup.classList.add("reserve__popup--active");
+    }, 300);
     document.querySelector(".reserve__popup-form-close").addEventListener("click", () => {
         popup.classList.remove("reserve__popup--active");
     });
@@ -79,6 +85,8 @@ reserveButton.addEventListener("click", () => {
 
 // AJAX
 
+const successPopup = document.querySelector(".popup-success");
+const errorPopup = document.querySelector(".popup-error");
 document.forms.reserveForm.onsubmit = function (e) {
     e.preventDefault();
     let nameInp = document.forms.reserveForm.name;
@@ -88,19 +96,21 @@ document.forms.reserveForm.onsubmit = function (e) {
 
     let xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "form.js");
+    xhr.open("POST", "form.php");
 
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             popup.classList.remove("reserve__popup--active");
+            successPopup.classList.add("popup-success--active");
             nameInp.value = "";
             phoneInp.value = "";
             emailInp.value = "";
             dateInp.value = "";
         } else {
             popup.classList.remove("reserve__popup--active");
+            errorPopup.classList.add("popup-error--active");
             nameInp.value = "";
             phoneInp.value = "";
             emailInp.value = "";
@@ -110,3 +120,15 @@ document.forms.reserveForm.onsubmit = function (e) {
 
     xhr.send("name=" + nameInp.value + "&phone=" + phoneInp.value + "&email=" + emailInp.value + "&date=" + dateInp.value);
 };
+
+const closeSuccessPopup = document.querySelector(".popup-success__close");
+const retryErrorPopup = document.querySelector(".popup-error__retry");
+
+closeSuccessPopup.addEventListener("click", () => {
+    successPopup.classList.remove("popup-success--active");
+});
+
+retryErrorPopup.addEventListener("click", () => {
+    errorPopup.classList.remove("popup-error--active");
+    popup.classList.add("reserve__popup--active");
+});
