@@ -541,3 +541,63 @@ body {
 .button-next {
     right: 0;
 }
+
+.reserve__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+
+    .reserve__popup-content {
+        background-color: var(--light-text-color);
+        padding: 100px;
+        position: relative;
+
+        .reserve__popup-form-close {
+            font-size: 46px;
+            line-height: 100%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .reserve__popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            position: relative;
+
+            .reserve__popup-form-input {
+                width: 100%;
+                border-bottom: 1px solid #707070;
+
+                input {
+                    width: 100%;
+                    border: none;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            .reserve__popup-btn {
+                width: 100%;
+                padding: 10px 20px;
+            }
+        }
+    }
+}
+
+.reserve__popup--active {
+    transform: scale(1);
+}

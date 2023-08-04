@@ -64,3 +64,33 @@ const swiper = new Swiper(".swiper", {
 });
 
 //SLIDER
+
+//POPUP
+
+const reserveButton = document.querySelector(".hero__content-cta-button");
+const popup = document.querySelector(".reserve__popup");
+
+reserveButton.addEventListener("click", () => {
+    popup.classList.add("reserve__popup--active");
+    document.querySelector(".reserve__popup-form-close").addEventListener("click", () => {
+        popup.classList.remove("reserve__popup--active");
+    });
+});
+
+// AJAX
+
+document.forms.reserveForm.onsubmit = function (e) {
+    e.preventDefault();
+    let nameInp = document.forms.reserveForm.name.value;
+    let phoneInp = document.forms.reserveForm.phone.value;
+    let emailInp = document.forms.reserveForm.email.value;
+    let dateInp = document.forms.reserveForm.date.value;
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "form.php");
+
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.send("name=" + nameInp + "&phone=" + phoneInp + "&email=" + emailInp + "&date=" + dateInp);
+};
