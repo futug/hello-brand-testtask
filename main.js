@@ -111,16 +111,14 @@ document.forms.reserveForm.onsubmit = function (e) {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            popup.classList.remove("reserve__popup--active");
-            successPopup.classList.add("popup-success--active");
-            nameInp.value = "";
-            phoneInp.value = "";
-            emailInp.value = "";
-            dateInp.value = "";
-        } else {
-            popup.classList.remove("reserve__popup--active");
-            errorPopup.classList.add("popup-error--active");
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                popup.classList.remove("reserve__popup--active");
+                successPopup.classList.add("popup-success--active");
+            } else {
+                popup.classList.remove("reserve__popup--active");
+                errorPopup.classList.add("popup-error--active");
+            }
             nameInp.value = "";
             phoneInp.value = "";
             emailInp.value = "";
